@@ -3,6 +3,7 @@
 ## OM_mapping_slurm.sh
 ## version 1.0
 ## 07-05-2024
+## bug fixes 0-09-2024
 
 ## use the -g flag and path to GFF file if GFF output is desired
 
@@ -26,7 +27,7 @@ ulimit -s unlimited
 
 
 
-if [[ $@ -ne 0 ]]; then
+if [[ $# -ne 0 ]]; then
 
 	while getopts ":g" opt; do
 		case ${opt} in
@@ -61,7 +62,7 @@ og="orthologer_output/mydata.og_map"
 sp1id="${species}.finalEdited.gff"
 
 #check that these files exist
-for testfile in ft mD mX og sp1id; do
+for testfile in $ft $mD $mX $og $sp1id; do
 
 	if [ -f "$testfile" ]; then	
 		echo "File $testfile exists; continuing..." 
