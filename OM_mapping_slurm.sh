@@ -3,7 +3,7 @@
 ## OM_mapping_slurm.sh
 ## version 1.0
 ## 07-05-2024
-## bug fixes 0-09-2024
+## bug fixes 09-09-2024
 
 ## use the -g flag and path to GFF file if GFF output is desired
 
