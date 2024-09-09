@@ -2,7 +2,7 @@
 
 ##this version updated 06-06-2024 to include options for outputting GFF results
 ##minor corrections 07-06-2024
-
+##bug fix 09-09-2024
 
 ### Note: the path to the proper GFF file needs to be provided on the command line when running this script! ###
 
@@ -28,7 +28,7 @@ ulimit -s unlimited
 
 GFF_file=false
 
-if [[ $@ -ne 0 ]]; then
+if [[ $# -ne 0 ]]; then
 
 	while getopts ":i:g" opt; do
 		case ${opt} in
