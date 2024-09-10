@@ -56,9 +56,9 @@ protein_file="${species}_protein.fs.maptxt"
 #set the OM_mappingFlyToSCRMshawPredictions.py arguments
 ft="/projects/academic/mshalfon/Mapping-D.mel-Orthologs/GCF_000001215.4_Release_6_plus_ISO1_MT_feature_table.txt"
 
-mD="orthologer_output/DMEL_protein.fs.maptxt"
-mX="orthologer_output/$protein_file"
-og="orthologer_output/mydata.og_map"
+mD="${species}_orthologer_output/DMEL_protein.fs.maptxt"
+mX="${species}_orthologer_output/$protein_file"
+og="${species}_orthologer_output/mydata.og_map"
 sp1id="${species}.finalEdited.gff"
 
 #check that these files exist
