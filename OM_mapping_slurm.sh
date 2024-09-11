@@ -3,7 +3,7 @@
 ## OM_mapping_slurm.sh
 ## version 1.0
 ## 07-05-2024
-## bug fixes 09-09-2024
+## bug fixes 09-09-2024, 09-11-2024
 
 ## use the -g flag and path to GFF file if GFF output is desired
 
@@ -60,9 +60,10 @@ mD="${species}_orthologer_output/DMEL_protein.fs.maptxt"
 mX="${species}_orthologer_output/$protein_file"
 og="${species}_orthologer_output/mydata.og_map"
 sp1id="${species}.finalEdited.gff"
+so="peaks_AllSets.bed"
 
 #check that these files exist
-for testfile in $ft $mD $mX $og $sp1id; do
+for testfile in $ft $mD $mX $og $sp1id $so; do
 
 	if [ -f "$testfile" ]; then	
 		echo "File $testfile exists; continuing..." 
@@ -74,18 +75,18 @@ done
 
 #run the main script
 echo "running main script"
-python /projects/academic/mshalfon/Mapping-D.mel-Orthologs/OM_mappingFlyOrthologsToSCRMshawPredictions.py -ft $ft -mD $mD -mX $mX -og $og -sp1id $finalGFF -so $so
+python /projects/academic/mshalfon/Mapping-D.mel-Orthologs/OM_mappingFlyOrthologsToSCRMshawPredictions.py -ft $ft -mD $mD -mX $mX -og $og -sp1id $sp1id -so $so
 
 
 echo "doing BEDTools merge&sort"
 #make a merged version too
-bedtools sort -i SO_peaks_Allsets.bed | bedtools merge -c 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 -o max,max,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,min > SO_merged_peaks_AllSets.bed
+bedtools sort -i SO_peaks_AllSets.bed | bedtools merge -c 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 -o max,max,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,distinct,min > SO_merged_peaks_AllSets.bed
 
 echo "renaming BED files"
 #rename the files
-mv peaks_Allsets.bed peaks_Allsets_$species.bed
-mv SO_peaks_Allsets.bed SO_peaks_Allsets_$species.bed
-mv SO_merged_peaks_Allsets.bed SO_merged_peaks_Allsets_$species.bed
+mv peaks_AllSets.bed peaks_Allsets_$species.bed
+mv SO_peaks_AllSets.bed SO_peaks_AllSets_$species.bed
+mv SO_merged_peaks_AllSets.bed SO_merged_peaks_AllSets_$species.bed
 
 #--------------- GFF option ------------------------------------------#
 #provide the GFF option
