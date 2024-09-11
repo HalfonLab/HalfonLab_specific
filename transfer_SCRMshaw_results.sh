@@ -7,7 +7,7 @@
 #run this script from the /vscratch/grp-mshalfon/my_genome directory
 
 #get the species basename from the directory name
-species=(basename $(pwd))
+species=$(basename $(pwd))
 
 #make a directory in the lab "SCRMshaw_results" directory to store the data
 resultsDir="/projects/academic/mshalfon/SCRMshaw_results/${species}_results"
