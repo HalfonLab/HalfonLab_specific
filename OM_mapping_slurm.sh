@@ -84,7 +84,7 @@ bedtools sort -i SO_peaks_AllSets.bed | bedtools merge -c 4,5,6,7,8,9,10,11,12,1
 
 echo "renaming BED files"
 #rename the files
-mv peaks_AllSets.bed peaks_Allsets_$species.bed
+mv peaks_AllSets.bed peaks_AllSets_$species.bed
 mv SO_peaks_AllSets.bed SO_peaks_AllSets_$species.bed
 mv SO_merged_peaks_AllSets.bed SO_merged_peaks_AllSets_$species.bed
 
@@ -95,7 +95,7 @@ if [ "$OUTPUT_GFF" ]; then
 	echo -e "Making GFF output: sort, merge, and convert\n\n"
 	
 	#convert to GFF:
-	awk -F'\t' '{OFS="\t"; start=$2+1; print $1, "SCRMshaw", "cis-regulatory_region", start, $3, $5, ".", ".", "ID=scrm_"$18";amplitude="$4";trainingSet="$16";method="$17";rank="$18}' SO_merged_peaks_AllSets.bed > SO_merged_peaks_AllSets.gff
+	awk -F'\t' '{OFS="\t"; start=$2+1; print $1, "SCRMshaw", "cis-regulatory_region", start, $3, $5, ".", ".", "ID=scrm_"$18";amplitude="$4";trainingSet="$16";method="$17";rank="$18}' SO_merged_peaks_AllSets_$species.bed > SO_merged_peaks_AllSets_$species.gff
 	
 	#merge the files and sort using GFF3_toolkit
 	
