@@ -95,7 +95,7 @@ if [ "$OUTPUT_GFF" ]; then
 	echo -e "Making GFF output: sort, merge, and convert\n\n"
 	
 	#convert to GFF:
-	awk -F'\t' '{OFS="\t"; start=$2+1; print $1, "SCRMshaw", "cis-regulatory_region", start, $3, $5, ".", ".", "ID=scrm_"$18";amplitude="$4";trainingSet="$16";method="$17";rank="$18}' SO_merged_peaks_AllSets_$species.bed > SO_merged_peaks_AllSets_$species.gff
+	awk -F'\t' '{OFS="\t"; start=$2+1; print $1, "SCRMshaw", "cis-regulatory_region", start, $3, $5, ".", ".", "ID=scrm_"$18";amplitude="$4";trainingSet="$16";method="$17";rank="$18}' SO_merged_peaks_AllSets_$species.bed > SO_merged_peaks_AllSets.gff
 	
 	#merge the files and sort using GFF3_toolkit
 	
