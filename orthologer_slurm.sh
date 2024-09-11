@@ -39,7 +39,7 @@ SPECIES=$(echo "$SPECIES" | sed 's/_protein\.fs//')
 echo "Slurm output log for orthologer with $SPECIES"
 echo "see $OUTPUTLOG for Orthologer output"
 
-OUTPUTLOG="../${SPECIES}_orthlogerOutputlog"
+OUTPUTLOG="../${SPECIES}_orthologerOutputlog"
 echo "Log files for Orthologer for $SPECIES vs DMEL" &> $OUTPUTLOG
 echo "---------------------------------------------------------------------------------" &> $OUPUTLOG
 
