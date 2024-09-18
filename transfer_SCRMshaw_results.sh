@@ -20,7 +20,7 @@ mv Slurm_$species.sh $resultsDir/
 #log files
 mv ${species}_*slurm_log $resultsDir/logs
 mv HDtestPredictions* $resultsDir/logs
-mv output_postProcRun1.text $resultsDir/logs
+mv output_postProcessing.txt $resultsDir/logs
 
 mv orthologer_slurm_output_log $resultsDir/logs
 mv ${species}_orthologerOutputlog $resultsDir/logs
@@ -29,9 +29,9 @@ mv log_flankingMoreThanOneGenesFromAllSets.txt $resultsDir/logs
 
 #SCRMshaw results files
 mv scrmshawOutput_offset_0to240.bed $resultsDir
-mv peaks_Allsets_$species.bed $resultsDir
-mv SO_peaks_Allsets_$species.bed $resultsDir
-mv SO_merged_peaks_Allsets_$species.bed $resultsDir
+mv peaks_AllSets_$species.bed $resultsDir
+mv SO_peaks_AllSets_$species.bed $resultsDir
+mv SO_merged_peaks_AllSets_$species.bed $resultsDir
 
 #check for GFF files, if they exist, move them
 if [ -f SO_merged_peaks_AllSets_$species.gff ]; then
