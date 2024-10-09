@@ -17,6 +17,7 @@
 #SBATCH --mail-type=ALL
 
 module load foss
+module load python
 module load scipy-bundle
 module load pybedtools/ 
 module load macs2
