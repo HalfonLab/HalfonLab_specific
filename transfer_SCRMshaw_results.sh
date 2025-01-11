@@ -43,4 +43,4 @@ fi
 
 #orthologer mapping files
 mv ${species}_orthologer_output/ $resultsDir
-mv $species.finalEdited.gff $resultsDir
+mv $species.finalEdited.map $resultsDir
