@@ -60,7 +60,7 @@ ft="/projects/academic/mshalfon/Mapping-D.mel-Orthologs/GCF_000001215.4_Release_
 mD="${species}_orthologer_output/DMEL_protein.fs.maptxt"
 mX="${species}_orthologer_output/$protein_file"
 og="${species}_orthologer_output/mydata.og_map"
-sp1id="${species}.finalEdited.gff"
+sp1id="${species}.finalEdited.map"
 so="peaks_AllSets.bed"
 
 #check that these files exist
