@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #transfer_SCRMshaw_results.sh
-#this script transfers results from scratch to the lab project directory
+#this script transfers results from the "tmp_SCRMshaw" directory to the lab project directory
 #it assumes all filenames and directories are as specified in the Halfon Lab protocol
 
-#run this script from the /vscratch/grp-mshalfon/my_genome directory
+#run this script from the /projects/academic/mshalfon/tmp_SCRMshaw/my_genome directory
 
 #get the species basename from the directory name
 species=$(basename $(pwd))
