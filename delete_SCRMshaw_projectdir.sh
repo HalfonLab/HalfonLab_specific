@@ -19,7 +19,7 @@ EOF
 
 #this is a wrapper for a slurm script that will do the actual deleting
 
-##the path to the SCRMshaw project directory in scratch space should go on the command line
+##the path to the SCRMshaw project directory in the tmp_SCRMshaw directory should go on the command line
 
 PROJECT_DIR=$1
 
@@ -30,7 +30,7 @@ fi
 
 #grab basename for later
 mydir=$(basename "$PROJECT_DIR")
-OUTFILE="/vscratch/grp-mshalfon/${mydir}_delete.log"
+OUTFILE="/projects/academic/mshalfon/tmp_SCRMshaw/${mydir}_delete.log"
 
 #make sure that you want to clean this directory:
 echo "SCRMshaw project directory is $mydir"
